@@ -1,4 +1,4 @@
-# Vendas por Categoria e Loja
+# Vendas por Loja e categoria
 
 Este repositório contém scripts em Python para:  
 - Carregar e concatenar dados de vendas de quatro lojas diferentes  
@@ -18,7 +18,7 @@ bash
 pip install pandas matplotlib
 
 
-## 2. Estrutura de Dados
+## 2. Estrutura de dados
 
 Os dados são obtidos diretamente dos arquivos CSV hospedados no GitHub (loja_1.csv, loja_2.csv, loja_3.csv, loja_4.csv). Cada arquivo possui colunas como:
 
@@ -28,7 +28,7 @@ Os dados são obtidos diretamente dos arquivos CSV hospedados no GitHub (loja_1.
 - `Avaliação da compra`: nota de 1 a 5 dada pelo cliente  
 - `lon`, `lat`: coordenadas geográficas do ponto de venda
 
-## 3. Pipeline de Processamento
+## 3. Pipeline de processamento
 
 1. **Carregamento**: ler cada CSV em um DataFrame com `pd.read_csv(url)` e adicionar a coluna `Loja` para identificar a origem.  
 2. **Concatenação**: mesclar os quatro DataFrames em um único `df_all` via `pd.concat`.  
@@ -40,42 +40,42 @@ Os dados são obtidos diretamente dos arquivos CSV hospedados no GitHub (loja_1.
 
 ## 4. Visualizações
 
-### 4.1 Gráfico de Barras Empilhadas (Contagem por Categoria)
+### 4.1 Gráfico de barras empilhadas (contagem por categoria)
 
 - Pivot em `vendas_cat` para formato de matriz (lojas × categorias).  
 - Plot com `kind='bar', stacked=True`.  
 - Anotações internas mostrando contagem de cada categoria e total acima de cada barra.  
 - Personalização de cores e ajustes de legenda.
 
-### 4.2 Faturamento Total por Loja
+### 4.2 Faturamento total por loja
 
 - Gráfico de barras verticais ordenado por faturamento decrescente.  
 - Formatação de eixo Y em Real brasileiro (`R$`).  
 - Anotações de valor no topo de cada barra.
 
-### 4.3 Frete Médio por Loja
+### 4.3 Frete médio por loja
 
 - Mesma estrutura do gráfico de faturamento, porém exibindo média de frete.  
 - Eixo Y formatado para duas casas decimais.
 
-### 4.4 Avaliação Média por Loja
+### 4.4 Avaliação média por loja
 
 - Gráfico de barras com barra por loja, escala de 1 a 5.  
 - Cores distintas e anotações com duas casas decimais.
 
-### 4.5 Dispersão Geográfica (Scatter Plot)
+### 4.5 Dispersão geográfica (scatter plot)
 
 - Pontos plotados conforme `lon` e `lat`.  
 - Tamanho proporcional ao valor de `Preço`.  
 - Cores diferentes por loja e legenda fora do gráfico.
 
-## 5. Customização de Paletas de Cores
+## 5. Customização de paletas de cores
 
 - As paletas padrão (`tab10`, `tab20`) são utilizadas.  
 - É possível pular índices indesejados para evitar sobreposição com cores de barras de loja.  
 - Exemplos de geração dinâmica de tons e gradientes por loja estão nos scripts.
 
-## 6. Como Executar
+## 6. Como executar
 
 1. Clone este repositório:
    bash
@@ -90,7 +90,7 @@ pip install pandas matplotlib
    bash
 python plot_vendas.py  
 
-4. Modifique parâmetros (URLs, divisores de tamanho de bolha, paletas) diretamente no código conforme necessidade.
+4. Modifique os parâmetros (URLs, divisores de tamanho de bolha, paletas) diretamente no código conforme necessidade.
 
 
 
