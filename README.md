@@ -1,4 +1,4 @@
-# Vendas por Loja e categoria
+# Vendas por loja e categoria
 
 Este repositório contém scripts em Python para:  
 - Carregar e concatenar dados de vendas de quatro lojas diferentes  
